@@ -1,0 +1,48 @@
+<div id="latitude-banner-container"></div>
+<script>
+    window.LatitudeCheckout = { 
+        "merchantId": "test-000421316", 
+        "page": "product",
+        "container": "latitude-banner-container",
+        "containerClass": "",
+        "currency": "AUD",
+        "layout": "custom-points",
+        "paymentOption": 'minimum',
+        "promotionMonths": 12, 
+        "modalConfig": {
+            "enabled": true,
+            "primaryColor": '#000000',
+        },  
+        "product": { 
+            "id": "1812", 
+            "name": "Breathe-Easy Tank", 
+            "category": "", 
+            "price": 988, 
+            "sku": "WT09" 
+        } 
+    };
+
+    (function () {
+        function asyncLoad() {
+            var curr = document.createElement("script");
+            curr.type = "text/javascript";
+            curr.async = true;
+            //curr.src = "https://checkout.latitudefinancial.com/assets/content.js?platform=magento2&merchantId=test-000420289";
+            //curr.src = "https://develop.checkout.test.merchant-services-np.lfscnp.com/assets/content.js?platform=magento2&merchantId=test-000420289";
+            curr.src = "https://dev2.checkout.dev.merchant-services-np.lfscnp.com/assets/content.js?platform=direct&merchantId=test-000421316";
+            //curr.src = "https://localhost:8100/assets/content.js?platform=magento2&merchantId=test-dj";
+            //curr.src = "https://localhost:8100/assets/content/shopify.js?platform=magento2&merchantId=test-000420289";
+
+            var scr = document.getElementsByTagName("script")[0];
+            scr.parentNode.insertBefore(curr, scr);
+        }
+
+        if (window.attachEvent) {
+            window.attachEvent("onload", asyncLoad);
+        } else {
+            window.addEventListener("load", asyncLoad, false);
+        }
+    })();
+</script>
+
+
